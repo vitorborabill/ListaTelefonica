@@ -54,8 +54,35 @@ namespace ListaTelefonica
 
         private void btRemove_Click(object sender, EventArgs e)
         {
-            DataGridViewCell cell = dgvLista.SelectedCells[0];
-            int indice = cell.RowIndex;
-        }
+            if (dgvLista.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para remover");
+                return;
+            }
+
+            int indice = dgvLista.SelectedCells[0].RowIndex;
+
+            if (indice < 0 || indice >= itens)
+            {
+                MessageBox.Show("Selecione um item válido para remover");
+                return;
+            }
+            DialogResult resposta = MessageBox.Show(
+                $"Deseja realmente remover {lista[indice, 0]}?",
+                "Confirmação",
+                MessageBoxButtons.YesNo);
+
+            if (resposta == DialogResult.Yes)
+            {
+                for (int i = indice; i < itens - 1; i++)
+                {
+                    lista[i, 0] = lista[i + 1, 0];
+                    lista[i, 1] = lista[i + 1, 1];
+                }
+                itens--;
+                lista[itens, 0] = null;
+                lista[itens, 1] = null;
+                Atualizar();
+                }
     }
 }
