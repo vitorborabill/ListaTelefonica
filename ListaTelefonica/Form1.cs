@@ -68,9 +68,15 @@ namespace ListaTelefonica
                 MessageBox.Show("Lista cheia!!!!!!!!!!!!!!!");
                 return;
             }
-            int id = Length(lista)+1;
+            int id = 1;
+            if(Length(lista) > 0)
+            {
+                id = int.Parse(lista[Length(lista)-1][0]) + 1;
+            }
             lista[Length(lista)] = new string[] { id.ToString(), txtNome.Text, txtTel.Text };
             Atualizar();
+            txtNome.Text = null;
+            txtTel.Text = null;
 
         }
         

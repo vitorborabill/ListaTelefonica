@@ -76,6 +76,8 @@
             // 
             // dgvLista
             // 
+            this.dgvLista.AllowUserToAddRows = false;
+            this.dgvLista.AllowUserToDeleteRows = false;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -83,6 +85,7 @@
             this.Telefone});
             this.dgvLista.Location = new System.Drawing.Point(22, 12);
             this.dgvLista.Name = "dgvLista";
+            this.dgvLista.ReadOnly = true;
             this.dgvLista.Size = new System.Drawing.Size(344, 413);
             this.dgvLista.TabIndex = 5;
             // 
