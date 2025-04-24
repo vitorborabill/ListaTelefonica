@@ -58,9 +58,22 @@ namespace ListaTelefonica
         }
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull)
+            if ((String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull) && dgvLista.SelectedCells.Count != 0)
             {
-                MessageBox.Show("Insira o nome e telefone");
+                DataGridViewCell cell = dgvLista.SelectedCells[0];
+                int linha = cell.RowIndex;
+                txtNome.Text = dgvLista.CurrentRow.Cells[1].Value.ToString();
+                txtTel.Text = dgvLista.CurrentRow.Cells[2].Value.ToString();
+                return;
+            }else if(dgvLista.SelectedCells.Count != 0 && !(String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull))
+            {
+                DataGridViewCell cell = dgvLista.SelectedCells[0];
+                int linha = cell.RowIndex;
+                lista[linha][1] = txtNome.Text;
+                lista[linha][2] = txtTel.Text;
+                Atualizar();
+                txtNome.Text = null;
+                txtTel.Text = null;
                 return;
             }
             if (Length(lista) >= MAX)
