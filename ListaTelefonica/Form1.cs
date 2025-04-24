@@ -68,7 +68,8 @@ namespace ListaTelefonica
                 MessageBox.Show("Lista cheia!!!!!!!!!!!!!!!");
                 return;
             }
-            lista[Length(lista)] = new string[] { txtNome.Text, txtTel.Text };
+            int id = Length(lista)+1;
+            lista[Length(lista)] = new string[] { id.ToString(), txtNome.Text, txtTel.Text };
             Atualizar();
 
         }
@@ -76,37 +77,28 @@ namespace ListaTelefonica
 
         private void btRemove_Click(object sender, EventArgs e)
         {
-            int itens = Length(lista);
-            if (dgvLista.SelectedCells.Count == 0)
+            if(dgvLista.SelectedCells.Count == 0)
             {
-                MessageBox.Show("Selecione um item para remover");
+                MessageBox.Show("Selecione uma lista pra remove");
                 return;
             }
-
-            int indice = dgvLista.SelectedCells[0].RowIndex;
-
-            if (indice < 0 || indice >= lista.Length)
+            DataGridViewCell cell = dgvLista.SelectedCells[0];
+            int linha = cell.RowIndex;
+            string id = dgvLista.Rows[linha].Cells[0].Value.ToString();
+            int indice = 0;
+            for (indice = 0; indice < Length(lista) && lista[indice][0] != id; indice++);
+            DialogResult r = MessageBox.Show($"Deseja MESMO retirar o contato de {lista[indice][1]}?","",MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
             {
-                MessageBox.Show("Selecione um item válido para remover");
-                return;
-            }
-            DialogResult resposta = MessageBox.Show(
-                $"Deseja realmente remover {lista[indice][0]}?",
-                "Confirmação",
-                MessageBoxButtons.YesNo);
-
-            if (resposta == DialogResult.Yes)
-            {
-                for (int i = indice; i < itens - 1; i++)
+                for(int i = indice; i<Length(lista)-1; i++) 
                 {
-                    lista[i][0] = lista[i + 1][0];
-                    lista[i][1] = lista[i + 1][1];
+                    lista[i] = lista[i + 1];
                 }
-                itens--;
-                lista[itens][0] = null;
-                lista[itens][1] = null;
+                lista[Length(lista) - 1] = null;
                 Atualizar();
             }
+
+
         }
     }
 }

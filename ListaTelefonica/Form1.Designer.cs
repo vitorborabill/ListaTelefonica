@@ -37,9 +37,10 @@
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btRemove = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -48,7 +49,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(492, 146);
+            this.lblNome.Location = new System.Drawing.Point(585, 146);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 0;
@@ -57,7 +58,7 @@
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(483, 238);
+            this.lblTel.Location = new System.Drawing.Point(576, 238);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(55, 13);
             this.lblTel.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // btAdicionar
             // 
-            this.btAdicionar.Location = new System.Drawing.Point(563, 316);
+            this.btAdicionar.Location = new System.Drawing.Point(640, 316);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btAdicionar.TabIndex = 4;
@@ -77,16 +78,17 @@
             // 
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Nome,
             this.Telefone});
             this.dgvLista.Location = new System.Drawing.Point(22, 12);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(320, 413);
+            this.dgvLista.Size = new System.Drawing.Size(344, 413);
             this.dgvLista.TabIndex = 5;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(563, 235);
+            this.txtTel.Location = new System.Drawing.Point(640, 235);
             this.txtTel.Mask = "(99) 99999-9999";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(100, 20);
@@ -94,7 +96,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(563, 143);
+            this.txtNome.Location = new System.Drawing.Point(640, 143);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 7;
@@ -113,12 +115,27 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(348, 291);
+            this.pictureBox2.Location = new System.Drawing.Point(365, 133);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(190, 134);
+            this.pictureBox2.Size = new System.Drawing.Size(214, 292);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            // 
+            // btRemove
+            // 
+            this.btRemove.Location = new System.Drawing.Point(640, 368);
+            this.btRemove.Name = "btRemove";
+            this.btRemove.Size = new System.Drawing.Size(75, 23);
+            this.btRemove.TabIndex = 10;
+            this.btRemove.Text = "Remover";
+            this.btRemove.UseVisualStyleBackColor = true;
+            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
             // 
             // Nome
             // 
@@ -129,16 +146,6 @@
             // 
             this.Telefone.HeaderText = "Telefone";
             this.Telefone.Name = "Telefone";
-            // 
-            // btRemove
-            // 
-            this.btRemove.Location = new System.Drawing.Point(563, 368);
-            this.btRemove.Name = "btRemove";
-            this.btRemove.Size = new System.Drawing.Size(75, 23);
-            this.btRemove.TabIndex = 10;
-            this.btRemove.Text = "Remover";
-            this.btRemove.UseVisualStyleBackColor = true;
-            this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
             // 
             // Form1
             // 
@@ -174,9 +181,10 @@
         private System.Windows.Forms.MaskedTextBox txtNome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.Button btRemove;
     }
 }
 

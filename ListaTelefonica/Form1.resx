@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Nome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3362,7 +3365,7 @@
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        /9j/4AAQSkZJRgABAQEAlgCWAAD/4QL2RXhpZgAATU0AKgAAAAgADwEAAAMAAAABD6AAAAEBAAMAAAAB
+        /9j/4AAQSkZJRgABAQEASABIAAD/4QL2RXhpZgAATU0AKgAAAAgADwEAAAMAAAABD6AAAAEBAAMAAAAB
         CMwAAAEDAAMAAAABAAYAAAEPAAIAAAAIAAAAwgEQAAIAAAAOAAAAygESAAMAAAABAAEAAAEaAAUAAAAB
         AAAA2AEbAAUAAAABAAAA4AEoAAMAAAABAAIAAAExAAIAAAAOAAAA6AEyAAIAAAAUAAAA9gITAAMAAAAB
         AAEAAIdpAAQAAAABAAABCpAQAAIAAAAHAAAC3pARAAIAAAAHAAAC5gAAAABzYW1zdW5nAEdhbGF4eSBN
@@ -6599,7 +6602,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABc4AAAIlCAYAAADsVGvuAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/fd3XEeWrgn3nzQz35357rrV3dXVZVVGpuRFSpRE70mJVhSNJHrv
+        wQAADsEBuJFr7QAA/7JJREFUeF7s/fd3XEeWrgn3nzQz35357rrV3dXVZVVGpuRFSpRE70mJVhSNJHrv
         QRKGoCdAwnvvvclMpAES3tBTtqq7r5lZ6/32Gyd3ZuTBSRCUVN1V8/UPzzouThyXyIh4cmOfv6uua8Is
         6hstnOWahmRqG5tQ19SM+uYWM7WXSUNLaxxdp+W8yja2tpn5qrp6lFRU4m5hEW7m3sGVGzdx7dZtM3/7
         bp5ZX1hahtLKKlTU1Mq5NZi6WAfrLa+uMdtz8wtw/XYOsq/fMHXYcN3Vm7fM9lt37pqy+cUlKC6vMPvz
