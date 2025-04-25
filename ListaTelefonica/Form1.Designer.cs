@@ -33,14 +33,14 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btRemove = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -88,6 +88,25 @@
             this.dgvLista.ReadOnly = true;
             this.dgvLista.Size = new System.Drawing.Size(344, 413);
             this.dgvLista.TabIndex = 5;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
             // 
             // txtTel
             // 
@@ -134,21 +153,6 @@
             this.btRemove.Text = "Remover";
             this.btRemove.UseVisualStyleBackColor = true;
             this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
             // 
             // Form1
             // 
