@@ -33,14 +33,14 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTel = new System.Windows.Forms.MaskedTextBox();
             this.txtNome = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btRemove = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,28 +49,31 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(585, 146);
+            this.lblNome.Location = new System.Drawing.Point(780, 180);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(44, 16);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome";
             // 
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(576, 238);
+            this.lblTel.Location = new System.Drawing.Point(768, 293);
+            this.lblTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(55, 13);
+            this.lblTel.Size = new System.Drawing.Size(67, 16);
             this.lblTel.TabIndex = 2;
             this.lblTel.Text = "Telefone: ";
             // 
             // btAdicionar
             // 
-            this.btAdicionar.Location = new System.Drawing.Point(640, 316);
+            this.btAdicionar.Location = new System.Drawing.Point(853, 389);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(4);
             this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btAdicionar.Size = new System.Drawing.Size(100, 28);
             this.btAdicionar.TabIndex = 4;
-            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.Text = "&Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
@@ -83,34 +86,57 @@
             this.ID,
             this.Nome,
             this.Telefone});
-            this.dgvLista.Location = new System.Drawing.Point(22, 12);
+            this.dgvLista.Location = new System.Drawing.Point(29, 15);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
-            this.dgvLista.Size = new System.Drawing.Size(344, 413);
+            this.dgvLista.Size = new System.Drawing.Size(459, 508);
             this.dgvLista.TabIndex = 5;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(640, 235);
+            this.txtTel.Location = new System.Drawing.Point(853, 289);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtTel.Mask = "(99) 99999-9999";
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 20);
+            this.txtTel.Size = new System.Drawing.Size(132, 22);
             this.txtTel.TabIndex = 6;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(640, 143);
+            this.txtNome.Location = new System.Drawing.Point(853, 176);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(132, 22);
             this.txtNome.TabIndex = 7;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(365, -11);
+            this.pictureBox1.Location = new System.Drawing.Point(487, -14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(434, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(579, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -118,43 +144,30 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(365, 133);
+            this.pictureBox2.Location = new System.Drawing.Point(487, 164);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(214, 292);
+            this.pictureBox2.Size = new System.Drawing.Size(285, 359);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
             // btRemove
             // 
-            this.btRemove.Location = new System.Drawing.Point(640, 368);
+            this.btRemove.Location = new System.Drawing.Point(853, 453);
+            this.btRemove.Margin = new System.Windows.Forms.Padding(4);
             this.btRemove.Name = "btRemove";
-            this.btRemove.Size = new System.Drawing.Size(75, 23);
+            this.btRemove.Size = new System.Drawing.Size(100, 28);
             this.btRemove.TabIndex = 10;
-            this.btRemove.Text = "Remover";
+            this.btRemove.Text = "&Remover";
             this.btRemove.UseVisualStyleBackColor = true;
             this.btRemove.Click += new System.EventHandler(this.btRemove_Click);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Telefone
-            // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btRemove);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -164,6 +177,7 @@
             this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.lblTel);
             this.Controls.Add(this.lblNome);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();

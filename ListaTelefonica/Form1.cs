@@ -14,10 +14,16 @@ namespace ListaTelefonica
     {
         string[][] lista;
         readonly int MAX = 100;
+        string id = "";
         public Form1()
         {
             InitializeComponent();
             lista = new string[MAX][];
+            txtNome.TabIndex = 0;
+            txtTel.TabIndex = 1;
+            btAdicionar.TabIndex = 2;
+            btRemove.TabIndex = 3;
+            dgvLista.TabIndex = 4;
 
         }
 
@@ -118,6 +124,13 @@ namespace ListaTelefonica
             }
 
 
+        }
+
+        private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = dgvLista.SelectedCells[0];
+            int linha = cell.RowIndex;
+            id = dgvLista.Rows[linha].Cells[0].Value.ToString();
         }
     }
 }
