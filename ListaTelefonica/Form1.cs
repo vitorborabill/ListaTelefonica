@@ -7,93 +7,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ListaTelefonica.Models;   
 
 namespace ListaTelefonica
 {
     public partial class Form1 : Form
     {
-        string[][] lista;
-        readonly int MAX = 100;
+        List<Contato> lista;
         string id = "";
         public Form1()
         {
             InitializeComponent();
-            lista = new string[MAX][];
+            lista = new List<Contato>();
 
-        }
-
-        int Length(string[] s)
-        {
-            int itens = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] != null)
-                    itens++;
-            }
-            return itens;
-        }
-
-        int Length(string[][] s)
-        {
-            int itens = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] != null)
-                    itens++;
-            }
-            return itens;
         }
         void Atualizar()
         {
             dgvLista.Rows.Clear();
-            for (int i = 0; i < Length(lista); i++)
+            for (int i = 0; i < lista.Count; i++)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvLista);
-                for (int j = 0; j < Length(lista[i]); j++)
-                {
-                    row.Cells[j].Value = lista[i][j];
-                }
+                row.Cells[0].Value = lista[i].Id; 
+                row.Cells[1].Value = lista[i].Nome; 
+                row.Cells[2].Value = lista[i].Telefone;            
                 dgvLista.Rows.Add(row);
             }
         }
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            int linha;
-            if ((String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull) && id != "")
+            if (String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull)
             {
-                for (linha = 0; linha < Length(lista) && lista[linha][0] != id; linha++) ;
-                txtNome.Text = lista[linha][1];
-                txtTel.Text = lista[linha][2];
-            }
-            else if (id != "" && !(String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull))
-            {
-                for (linha = 0; linha < Length(lista) && lista[linha][0] != id; linha++) ;
-                lista[linha][1] = txtNome.Text;
-                lista[linha][2] = txtTel.Text;
-                Atualizar();
-            }
-            else if (String.IsNullOrWhiteSpace(txtNome.Text) || !txtTel.MaskFull)
-            {
-                MessageBox.Show("Adicione itens nas caixas de texto!!!");
-            }
-            else if (Length(lista) >= MAX)
-            {
-                MessageBox.Show("Lista cheia!!!!!!!!!!!!!!!");
-            }
-            else
-            {
-                int id_num = 1;
-                if (Length(lista) > 0)
-                {
-                    id_num = int.Parse(lista[Length(lista) - 1][0]) + 1;
-                }
-                lista[Length(lista)] = new string[] { id_num.ToString(), txtNome.Text, txtTel.Text };
-                Atualizar();
-                txtNome.Text = null;
-                txtTel.Text = null;
+               MessageBox.Show("Preencha os campos corretamente");
                 return;
             }
+            int id = 1;
+            if (lista.Count > 0)
+                id = lista.Max(c => c.Id) + 1;
+            Contato novo = new Contato
+            {
+                Id = id,
+                Nome = txtNome.Text.Trim(),
+                Telefone = txtTel.Text.Trim()
+            };
+
+            lista.Add(novo);
+            Atualizar();
+            txtNome.Text = null;
+            txtTel.Text = null;
+            
         }
         
 
@@ -106,16 +68,13 @@ namespace ListaTelefonica
             }
             DataGridViewCell cell = dgvLista.SelectedCells[0];
             int linha = cell.RowIndex;
-            int indice = 0;
-            for (indice = 0; indice < Length(lista) && lista[indice][0] != id; indice++);
-            DialogResult r = MessageBox.Show($"Deseja MESMO retirar o contato de {lista[indice][1]}?","",MessageBoxButtons.YesNo);
+            string id = dgvLista.Rows[linha].Cells[0].Value.ToString();
+            
+            int indice = lista.FindIndex(c => c.Id + "" == id);
+            DialogResult r = MessageBox.Show($"Deseja MESMO retirar o contato de {lista[indice].Nome}?","",MessageBoxButtons.YesNo);
             if (r == DialogResult.Yes)
             {
-                for(int i = indice; i<Length(lista)-1; i++) 
-                {
-                    lista[i] = lista[i + 1];
-                }
-                lista[Length(lista) - 1] = null;
+                lista.RemoveAt(indice);
                 Atualizar();
             }
 
